@@ -99,3 +99,35 @@ html, body {
     font-size: 14px;
     font-weight: 700;
 }
+
+.list-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card-list-item {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 20px;
+
+}
+
+.card-list-item h3 {
+    color: #ff8400;
+    font-size: 18px;
+}
+
+.address-line {
+    color: #fff;
+    font-size: 14px;
+}
+
+.cep-line {
+    color: #8f8f8f;
+    font-size: 12px;
+}
