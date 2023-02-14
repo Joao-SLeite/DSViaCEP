@@ -25,7 +25,6 @@ function handleBtnCloseClick(event) {
     closeModal();
 }
 function handleContainerClick(event) {
-    event.preventDefault();
     if (event.target === this) {
         closeModal();
     }
