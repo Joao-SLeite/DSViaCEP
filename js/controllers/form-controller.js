@@ -14,6 +14,7 @@ function State() {
 
     this.errorCep = null;
     this.errorNumber = null;
+    this.storageCeps = [];
 }
 
 const state = new State();
@@ -59,9 +60,22 @@ async function handleInputCepChange(event) {
     }
 }
 
-async function handleBtnSaveClick(event) {
+function handleBtnSaveClick(event) {
     event.preventDefault();
-    listController.addCard(state.address);
+
+    const errors = addressService.getErrors(state.address);
+
+    const keys = Object.keys(errors);
+
+    if (keys.length > 0) {
+        keys.forEach((key) => {
+            setFormError(key, errors.key);
+        });
+    } else {
+        listController.addCard(state.address);
+        state.storageCeps.push(state.address);
+        localStorage.setItem('address', state.storageCeps);
+    }
 }
 
 function handleInputNumberChange(event) {
@@ -85,6 +99,8 @@ function clearForm() {
 
     setFormError('cep', '');
     setFormError('number', '');
+
+    state.address = new Address();
 
     state.inputCep.focus();
 }

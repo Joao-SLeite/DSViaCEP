@@ -1,3 +1,6 @@
+@import 'modal.css';
+@import 'buttons.css';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -79,30 +82,6 @@ html, body {
 
 .form-input:disabled {
     background-color: #ddd;
-}
-
-.btn-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.btn-container button {
-    width: 250px;
-    height: 50px;
-    border: 0;
-    border-radius: 4px;
-    background-color: #ff8400;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
-}
-
-.btn-container button:hover {
-    filter: brightness(1.2);
 }
 
 .list-container {
