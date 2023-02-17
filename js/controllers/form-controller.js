@@ -14,7 +14,6 @@ function State() {
 
     this.errorCep = null;
     this.errorNumber = null;
-    this.storageCeps = [];
 }
 
 const state = new State();
@@ -69,12 +68,11 @@ function handleBtnSaveClick(event) {
 
     if (keys.length > 0) {
         keys.forEach((key) => {
-            setFormError(key, errors.key);
+            setFormError(key, errors[key]);
         });
     } else {
         listController.addCard(state.address);
-        state.storageCeps.push(state.address);
-        localStorage.setItem('address', state.storageCeps);
+        clearForm();
     }
 }
 
