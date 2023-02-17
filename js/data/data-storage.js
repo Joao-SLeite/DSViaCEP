@@ -15,10 +15,8 @@ export function getAddress() {
 
 export function removeAddress(index) {
     const listCep = getAddress();
-    console.log(listCep);
     const addressListFiltered = listCep.filter(
         (address, indexAdd) => indexAdd != index
     );
-    console.log(addressListFiltered);
     localStorage.setItem('ceps', JSON.stringify(addressListFiltered));
 }
